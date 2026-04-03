@@ -291,12 +291,12 @@
         <div class="contact-card__label">LinkedIn</div>
         <div class="contact-card__value">Sundari Pathak</div>
       </a>
-      <a href="mailto:sundarighanshyampathak@gmail.com" class="glass-card contact-card" id="contactEmail">
+      <a href="mailto:sundarighanshyampathak@gmail.com" target="_blank" rel="noopener noreferrer" class="glass-card contact-card" id="contactEmail">
         <span class="contact-card__icon">📧</span>
         <div class="contact-card__label">Email</div>
         <div class="contact-card__value">sundarighanshyampathak@gmail.com</div>
       </a>
-      <a href="tel:+919726719978" class="glass-card contact-card" id="contactPhone">
+      <a href="tel:+919726719978" target="_blank" rel="noopener noreferrer" class="glass-card contact-card" id="contactPhone">
         <span class="contact-card__icon">📱</span>
         <div class="contact-card__label">Phone</div>
         <div class="contact-card__value">+91 9726719978</div>
@@ -311,7 +311,7 @@
     <div class="footer__links">
       <a href="https://github.com/SGP23" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/sundari-pathak-920490341" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="mailto:sundarighanshyampathak@gmail.com" class="footer__link">Email</a>
+      <a href="mailto:sundarighanshyampathak@gmail.com" class="footer__link" target="_blank" rel="noopener noreferrer">Email</a>
     </div>
     <p class="footer__text">© 2026 Sundari Pathak. Built with passion.</p>
   </div>
@@ -467,13 +467,33 @@
 })();
 
 // ═══════════════════════════════════════════
-// SCROLL PROGRESS BAR
+// SCROLL PROGRESS BAR & ACTIVE SECTION HIGHLIGHT
 // ═══════════════════════════════════════════
 window.addEventListener('scroll', () => {
+  // Scroll Progress
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const progress = (scrollTop / docHeight) * 100;
   document.getElementById('scrollProgress').style.width = progress + '%';
+  
+  // Active Section Highlight (ScrollSpy)
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.navbar__link');
+  
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (window.scrollY >= (sectionTop - 150)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('navbar__link--active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('navbar__link--active');
+    }
+  });
 });
 
 // ═══════════════════════════════════════════

@@ -6,7 +6,7 @@
     "category": "nlp",
     "description": "Hybrid semantic search assistant for geospatial intelligence. Combines LangChain RAG pipelines with FAISS vector retrieval over GIS datasets, delivering spatial-aware conversational Q&A through an interactive Streamlit dashboard with Folium and Plotly visualizations.",
     "github_link": "https://github.com/SGP23",
-    "demo_link": "",
+    "demo_link": "https://huggingface.co/spaces/SGP23/gis-data-assistant",
     "tech_stack": ["LangChain", "FAISS", "Streamlit", "GeoPandas", "Folium", "Plotly", "Python"],
     "preview_image": "",
     "problem_statement": "Geospatial datasets are large, heterogeneous, and difficult to query using traditional tools. Analysts need an intelligent assistant that can understand natural language questions about geographic data, retrieve relevant spatial records via semantic search, and render results as interactive maps and charts.",

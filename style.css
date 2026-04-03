@@ -492,8 +492,8 @@ img {
 .glass-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-glass-hover);
-  box-shadow: var(--shadow-card);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), 0 10px 40px rgba(108, 92, 231, 0.15);
+  transform: translateY(-8px) scale(1.02);
 }
 
 /* ── About Section ── */
