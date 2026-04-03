@@ -46,10 +46,17 @@
         <span class="hero__badge-dot"></span>
         Open to Opportunities
       </div>
-      <h1 class="hero__title">
-        Hi, I'm <span class="hero__title-gradient">Sundari Pathak</span>
+      <h1 class="hero__title" style="font-size: clamp(2.3rem, 5.5vw, 4.2rem); margin-bottom: 20px; line-height: 1.15;">
+        I build <span class="hero__title-gradient">Retrieval-Augmented</span><br>AI systems that ship.
       </h1>
-      <p class="hero__subtitle" id="heroSubtitle"></p>
+      <p class="hero__subtitle" id="heroSubtitle" style="color: var(--accent-3); font-weight: 500; font-size: 1.25rem; margin-bottom: 12px;"></p>
+      
+      <div style="display: flex; gap: 16px; align-items: center; justify-content: flex-start; margin-bottom: 40px; font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); flex-wrap: wrap;" class="fade-in">
+        <span><span style="color:var(--success);">✔</span> 35% faster retrieval</span>
+        <span><span style="color:var(--success);">✔</span> Hybrid semantic routing</span>
+        <span><span style="color:var(--success);">✔</span> Production GIS assistant deployment</span>
+      </div>
+
       <div class="hero__actions">
         <a href="projects.html" class="btn btn--primary" id="btnProjects">
           <span>🚀</span> View Projects
@@ -57,6 +64,30 @@
         <a href="#about" class="btn btn--outline" id="btnAbout">
           <span>👋</span> About Me
         </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMPACT METRICS ═══ -->
+<section class="section" id="impact" style="padding: 60px 0; border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); background: var(--bg-secondary);">
+  <div class="container">
+    <div class="stagger-children fade-in" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; text-align: center;">
+      <div>
+        <div class="stat-card__number" style="font-size: 2.8rem; font-weight: 900; color: var(--accent-1); margin-bottom: 4px;">-35%</div>
+        <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Retrieval Latency<br>Improvement</div>
+      </div>
+      <div>
+        <div class="stat-card__number" style="font-size: 2.8rem; font-weight: 900; color: var(--accent-2); margin-bottom: 4px;">Hybrid</div>
+        <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Semantic Routing<br>Pipeline</div>
+      </div>
+      <div>
+        <div class="stat-card__number" style="font-size: 2.8rem; font-weight: 900; color: var(--accent-3); margin-bottom: 4px;">FAISS</div>
+        <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Vector Search<br>Architecture</div>
+      </div>
+      <div>
+        <div class="stat-card__number" style="font-size: 2.8rem; font-weight: 900; color: var(--success); margin-bottom: 4px;">Edge</div>
+        <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Local LLM<br>Deployment</div>
       </div>
     </div>
   </div>
@@ -105,6 +136,36 @@
 
 <div class="container"><div class="divider"></div></div>
 
+<!-- ═══ PIPELINE VISUALIZATION ═══ -->
+<section class="section" id="pipeline">
+  <div class="container">
+    <div class="section__header fade-in">
+      <span class="section__label">Architecture Flow</span>
+      <h2 class="section__title">Standard Retrieval System</h2>
+    </div>
+    <div class="pipeline-flow fade-in stagger-children" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; padding: 20px 0;">
+      
+      <div class="pipeline-node glass-card" style="padding: 12px 24px; border-left: 3px solid var(--accent-1); font-weight: 600; font-size: 0.95rem;">👤 User Query</div>
+      <div style="color: var(--text-muted); font-size: 1.2rem;">➔</div>
+      
+      <div class="pipeline-node glass-card" style="padding: 12px 24px; border-left: 3px solid var(--accent-2); font-weight: 600; font-size: 0.95rem;">🔀 Router</div>
+      <div style="color: var(--text-muted); font-size: 1.2rem;">➔</div>
+      
+      <div class="pipeline-node glass-card" style="padding: 12px 24px; border: 1px dashed var(--accent-3); background: rgba(0,0,0,0.3); font-weight: 600; font-size: 0.95rem;">🗄️ FAISS Index</div>
+      <div style="color: var(--text-muted); font-size: 1.2rem;">➔</div>
+      
+      <div class="pipeline-node glass-card" style="padding: 12px 24px; border-left: 3px solid var(--accent-3); font-weight: 600; font-size: 0.95rem;">🔍 Retriever</div>
+      <div style="color: var(--text-muted); font-size: 1.2rem;">➔</div>
+      
+      <div class="pipeline-node glass-card" style="padding: 12px 24px; border-left: 3px solid var(--accent-1); font-weight: 600; font-size: 0.95rem;">🧠 LLM</div>
+      <div style="color: var(--text-muted); font-size: 1.2rem;">➔</div>
+      
+      <div class="pipeline-node glass-card" style="padding: 12px 24px; border-left: 3px solid var(--success); background: rgba(34, 197, 94, 0.05); color: var(--success); font-weight: 600; font-size: 0.95rem;">✨ Response</div>
+      
+    </div>
+  </div>
+</section>
+
 <!-- ═══ EXPERIENCE ═══ -->
 <section class="section" id="experience">
   <div class="container">
@@ -149,72 +210,68 @@
     <div class="skills__grid stagger-children fade-in">
       <div class="glass-card">
         <div class="skill-category__title">
-          <span class="skill-category__icon">💻</span> Languages
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">HTML / CSS</span>
-        </div>
-      </div>
-      <div class="glass-card">
-        <div class="skill-category__title">
-          <span class="skill-category__icon">🧠</span> ML Frameworks
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Scikit-learn</span>
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">MediaPipe</span>
-          <span class="skill-tag">sentence-transformers</span>
-          <span class="skill-tag">Pandas</span>
-          <span class="skill-tag">NumPy</span>
-        </div>
-      </div>
-      <div class="glass-card">
-        <div class="skill-category__title">
           <span class="skill-category__icon">🔍</span> Retrieval Systems
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">LangChain</span>
-          <span class="skill-tag">FAISS</span>
           <span class="skill-tag">RAG Pipelines</span>
-          <span class="skill-tag">PyPDF2</span>
-          <span class="skill-tag">Vector Search</span>
+          <span class="skill-tag">Semantic Search</span>
+          <span class="skill-tag">Hybrid Routing</span>
+          <span class="skill-tag">Document Context</span>
         </div>
       </div>
       <div class="glass-card">
         <div class="skill-category__title">
-          <span class="skill-category__icon">📊</span> Visualization
+          <span class="skill-category__icon">🗄️</span> Vector Databases
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Plotly</span>
-          <span class="skill-tag">Folium</span>
-          <span class="skill-tag">Matplotlib</span>
-          <span class="skill-tag">Seaborn</span>
-          <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">FAISS</span>
+          <span class="skill-tag">Vector Indexing</span>
+          <span class="skill-tag">Similarity Search</span>
+          <span class="skill-tag">Distance Metrics</span>
         </div>
       </div>
       <div class="glass-card">
         <div class="skill-category__title">
-          <span class="skill-category__icon">🗄️</span> Databases
+          <span class="skill-category__icon">🧠</span> LLM Orchestration
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">SQLite</span>
-          <span class="skill-tag">FAISS IndexFlatIP</span>
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">sentence-transformers</span>
+          <span class="skill-tag">Prompt Synthesis</span>
+          <span class="skill-tag">Local Deployment</span>
         </div>
       </div>
       <div class="glass-card">
         <div class="skill-category__title">
-          <span class="skill-category__icon">🚀</span> Deployment
+          <span class="skill-category__icon">🌍</span> Geospatial Analytics
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Streamlit</span>
-          <span class="skill-tag">HuggingFace Spaces</span>
-          <span class="skill-tag">GitHub Pages</span>
           <span class="skill-tag">GeoPandas</span>
+          <span class="skill-tag">Spatial Queries</span>
+          <span class="skill-tag">GIS Datasets</span>
+          <span class="skill-tag">Coordinate Mapping</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="skill-category__title">
+          <span class="skill-category__icon">🚀</span> Deployment Pipelines
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">HuggingFace Spaces</span>
+          <span class="skill-tag">Streamlit Execution</span>
+          <span class="skill-tag">Model Compression</span>
+          <span class="skill-tag">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="skill-category__title">
+          <span class="skill-category__icon">📊</span> Visualization Interfaces
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Streamlit Dashboards</span>
+          <span class="skill-tag">Folium Overlays</span>
+          <span class="skill-tag">Plotly Charts</span>
+          <span class="skill-tag">Interactive Analytics</span>
         </div>
       </div>
     </div>
@@ -256,9 +313,36 @@
 <section class="section" id="projects-preview">
   <div class="container">
     <div class="section__header fade-in">
-      <span class="section__label">Projects</span>
+      <span class="section__label">Systems I've Built</span>
       <h2 class="section__title">Featured Work</h2>
     </div>
+
+    <!-- FEATURED SYSTEM BLOCK -->
+    <div class="featured-system glass-card fade-in" style="margin-bottom: 40px; padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; border: 1px solid rgba(168, 85, 247, 0.4);">
+      <div class="featured-system__info">
+        <span class="tech-tag" style="background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3); margin-bottom: 16px; display: inline-block;">🏆 Flagship System</span>
+        <h3 style="font-size: 2rem; margin-bottom: 16px; color: var(--text-primary);">Enhanced GIS Data Assistant <span style="font-size: 1.8rem;">🌍</span></h3>
+        <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">Hybrid semantic search assistant for geospatial intelligence. Combines LangChain RAG pipelines with FAISS vector retrieval over GIS datasets.</p>
+        <div class="project-card__tech" style="margin-bottom: 24px;">
+          <span class="tech-tag">LangChain</span>
+          <span class="tech-tag">FAISS</span>
+          <span class="tech-tag">GeoPandas</span>
+          <span class="tech-tag">Streamlit</span>
+        </div>
+        <a href="project-template.html?id=0" class="btn btn--primary btn--sm" style="display: inline-block;">View System Architecture</a>
+      </div>
+      <div class="featured-system__architecture" style="background: rgba(0,0,0,0.25); border-radius: var(--radius-lg); padding: 24px; border: 1px dashed var(--border-glass);">
+        <h4 style="color: var(--text-primary); margin-bottom: 16px; font-size: 1.1rem; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">Architecture Summary</h4>
+        <ul style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; list-style: none;">
+          <li><span style="color:var(--accent-2); font-weight: 600;">1. Ingestion:</span> Geospatial records parsed via GeoPandas.</li>
+          <li><span style="color:var(--accent-2); font-weight: 600;">2. Embedding:</span> Recursive text chunking + FAISS indexing.</li>
+          <li><span style="color:var(--accent-2); font-weight: 600;">3. Retrieval:</span> Hybrid vector similarity + spatial coordinate filtering.</li>
+          <li><span style="color:var(--accent-2); font-weight: 600;">4. Synthesis:</span> LLM-powered context grounded answer generation.</li>
+          <li><span style="color:var(--success); font-weight: 600;">5. Interface:</span> Folium maps & Plotly charts on Streamlit.</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="projects__grid stagger-children fade-in" id="featuredProjects">
       <!-- Dynamically loaded from projects.json -->
     </div>
@@ -398,7 +482,7 @@
 // ═══════════════════════════════════════════
 (function() {
   const el = document.getElementById('heroSubtitle');
-  const text = "AI Engineer — Retrieval-Augmented Generation, semantic search, geospatial AI systems, and production ML pipelines.";
+  const text = "LangChain • FAISS • LLM pipelines • Geospatial AI";
   let i = 0;
 
   function type() {
@@ -522,15 +606,23 @@ fetch('projects.json')
   .then(r => r.json())
   .then(projects => {
     const grid = document.getElementById('featuredProjects');
-    projects.slice(0, 3).forEach((p, i) => {
+    projects.slice(1, 4).forEach((p, i) => {
       grid.innerHTML += `
         <a href="project-template.html?id=${p.id}" class="glass-card project-card" style="text-decoration:none;">
           <div class="project-card__preview" style="background:linear-gradient(135deg, ${['#6c5ce7','#a855f7','#06b6d4'][i%3]}22, ${['#a855f7','#06b6d4','#6c5ce7'][i%3]}44); display:flex; align-items:center; justify-content:center; font-size:3.5rem;">${p.emoji || '🤖'}</div>
           <div class="project-card__body">
             <div class="project-card__title">${p.title}</div>
-            <div class="project-card__desc">${p.description}</div>
-            <div class="project-card__tech">
+            <div class="project-card__desc" style="font-size:0.85rem; line-height:1.4; display:flex; flex-direction:column; gap:6px; margin-bottom:16px;">
+              <div><strong style="color:var(--accent-3);">Problem:</strong> ${p.problem_statement.substring(0, 75)}...</div>
+              <div><strong style="color:var(--accent-2);">Pipeline:</strong> ${p.model_approach.substring(0, 75)}...</div>
+              <div><strong style="color:var(--success);">Impact Metric:</strong> ${Object.keys(p.evaluation_metrics)[1] || 'Status'}: ${Object.values(p.evaluation_metrics)[1] || 'Active'}</div>
+            </div>
+            <div class="project-card__tech" style="margin-bottom: 16px;">
               ${p.tech_stack.slice(0,4).map(t => `<span class="tech-tag">${t}</span>`).join('')}
+            </div>
+            <div class="project-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
+              ${p.demo_link ? `<button onclick="window.open('${p.demo_link}', '_blank'); event.preventDefault(); event.stopPropagation();" class="btn btn--primary btn--sm" style="border:none; cursor:pointer;">Live Demo</button>` : ''}
+              ${p.github_link ? `<button onclick="window.open('${p.github_link}', '_blank'); event.preventDefault(); event.stopPropagation();" class="btn btn--outline btn--sm" style="border:1px solid currentColor; cursor:pointer;">GitHub</button>` : ''}
             </div>
           </div>
         </a>

@@ -120,13 +120,17 @@
         </div>
         <div class="project-card__body">
           <div class="project-card__title">${p.title}</div>
-          <div class="project-card__desc">${p.description}</div>
+          <div class="project-card__desc" style="font-size:0.85rem; line-height:1.4; display:flex; flex-direction:column; gap:6px; margin-bottom:16px;">
+            <div><strong style="color:var(--accent-3);">Problem:</strong> ${p.problem_statement.substring(0, 90)}...</div>
+            <div><strong style="color:var(--accent-2);">Pipeline:</strong> ${p.model_approach.substring(0, 90)}...</div>
+            <div><strong style="color:var(--success);">Impact Metric:</strong> ${Object.keys(p.evaluation_metrics)[1] || 'Status'}: ${Object.values(p.evaluation_metrics)[1] || 'Active'}</div>
+          </div>
           <div class="project-card__tech">
             ${p.tech_stack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
           </div>
-          <div class="project-card__actions">
-            ${p.demo_link ? `<span class="btn btn--primary btn--sm">Live Demo</span>` : ''}
-            ${p.github_link ? `<span class="btn btn--outline btn--sm">GitHub</span>` : ''}
+          <div class="project-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
+            ${p.demo_link ? `<button onclick="window.open('${p.demo_link}', '_blank'); event.preventDefault(); event.stopPropagation();" class="btn btn--primary btn--sm" style="border:none; cursor:pointer;">Live Demo</button>` : ''}
+            ${p.github_link ? `<button onclick="window.open('${p.github_link}', '_blank'); event.preventDefault(); event.stopPropagation();" class="btn btn--outline btn--sm" style="border:1px solid currentColor; cursor:pointer;">GitHub</button>` : ''}
           </div>
         </div>
       </a>
