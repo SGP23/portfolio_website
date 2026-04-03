@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sundari Pathak — AI Engineer</title>
+  <meta name="description" content="Portfolio of Sundari Pathak — AI Engineer specializing in Retrieval-Augmented Generation, semantic search, geospatial AI, and production ML pipelines.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Particle Canvas -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- Background Orbs -->
+<div class="bg-orbs">
+  <div class="bg-orb bg-orb--1"></div>
+  <div class="bg-orb bg-orb--2"></div>
+  <div class="bg-orb bg-orb--3"></div>
+</div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__brand">SP.</a>
+    <ul class="navbar__links" id="navLinks">
+      <li><a href="#about" class="navbar__link">About</a></li>
+      <li><a href="#experience" class="navbar__link">Experience</a></li>
+      <li><a href="#skills" class="navbar__link">Skills</a></li>
+      <li><a href="#leadership" class="navbar__link">Leadership</a></li>
+      <li><a href="projects.html" class="navbar__link">Projects</a></li>
+      <li><a href="#contact" class="navbar__link">Contact</a></li>
+    </ul>
+    <button class="navbar__mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Open to Opportunities
+      </div>
+      <h1 class="hero__title">
+        Hi, I'm <span class="hero__title-gradient">Sundari Pathak</span>
+      </h1>
+      <p class="hero__subtitle" id="heroSubtitle"></p>
+      <div class="hero__actions">
+        <a href="projects.html" class="btn btn--primary" id="btnProjects">
+          <span>🚀</span> View Projects
+        </a>
+        <a href="#about" class="btn btn--outline" id="btnAbout">
+          <span>👋</span> About Me
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section__header fade-in">
+      <span class="section__label">About</span>
+      <h2 class="section__title">Engineering Intelligent Systems</h2>
+    </div>
+    <div class="about__grid">
+      <div class="about__text fade-in-left">
+        <p>
+          I'm an AI Engineer focused on building production-grade ML pipelines, vector retrieval systems, and interactive data applications. I specialize in turning unstructured data into searchable, queryable intelligence.
+        </p>
+        <p>
+          At Alchemyte Data Solutions, I engineered a hybrid semantic GIS assistant that combines LangChain RAG workflows with FAISS vector search over geospatial datasets — delivering spatial-aware Q&A through interactive Streamlit dashboards with Folium map overlays and Plotly analytics.
+        </p>
+        <p>
+          My work spans the full ML lifecycle: preprocessing automation, model training and compression, semantic embedding pipelines, vector indexing, and cloud deployment. I build systems that are designed for real users — with real data at production scale.
+        </p>
+      </div>
+      <div class="about__stats stagger-children fade-in-right">
+        <div class="glass-card stat-card">
+          <div class="stat-card__number" data-count="4">0</div>
+          <div class="stat-card__label">ML Systems Built</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-card__number" data-count="18">0</div>
+          <div class="stat-card__label">Technologies</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-card__number" data-count="193">0</div>
+          <div class="stat-card__label">K Samples Trained On</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-card__number" data-count="97">0</div>
+          <div class="stat-card__label">Best Model R² (%)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section__header fade-in">
+      <span class="section__label">Experience</span>
+      <h2 class="section__title">Professional Journey</h2>
+    </div>
+    <div class="timeline fade-in">
+      <div class="timeline__item">
+        <div class="timeline__date">AI Engineer Intern</div>
+        <div class="timeline__title">Alchemyte Data Solutions LLP</div>
+        <div class="timeline__company">AI/ML Engineering</div>
+        <ul class="timeline__desc">
+          <li>Engineered a hybrid semantic GIS assistant combining LangChain RAG pipelines with FAISS vector retrieval over geospatial datasets for spatial-aware conversational Q&A</li>
+          <li>Built interactive Streamlit dashboards with Folium map overlays and Plotly analytics charts for geospatial data exploration and ML preprocessing automation</li>
+          <li>Implemented document chunking, embedding, and indexing workflows using FAISS and GeoPandas for real-time semantic search across GIS records</li>
+        </ul>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__date">ML Projects</div>
+        <div class="timeline__title">Independent Research & Development</div>
+        <div class="timeline__company">Self-Directed</div>
+        <ul class="timeline__desc">
+          <li>RAG Document Chatbot — sentence-transformers + FAISS retrieval pipeline with extractive answer synthesis from uploaded PDF/TXT documents</li>
+          <li>Diamond Price Prediction — GradientBoosting pipeline (R²=0.979) trained on 193K samples, compressed from 1.3GB to 1.6MB for cloud deployment</li>
+          <li>ASL Translator — MediaPipe hand landmark extraction + CNN classification for real-time sign language recognition</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══ SKILLS ═══ -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section__header fade-in">
+      <span class="section__label">Skills</span>
+      <h2 class="section__title">Technical Stack</h2>
+    </div>
+    <div class="skills__grid stagger-children fade-in">
+      <div class="glass-card">
+        <div class="skill-category__title">
+          <span class="skill-category__icon">💻</span> Languages
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="skill-category__title">
+          <span class="skill-category__icon">🧠</span> ML Frameworks
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">MediaPipe</span>
+          <span class="skill-tag">sentence-transformers</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="skill-category__title">
+          <span class="skill-category__icon">🔍</span> Retrieval Systems
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">FAISS</span>
+          <span class="skill-tag">RAG Pipelines</span>
+          <span class="skill-tag">PyPDF2</span>
+          <span class="skill-tag">Vector Search</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="skill-category__title">
+          <span class="skill-category__icon">📊</span> Visualization
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Plotly</span>
+          <span class="skill-tag">Folium</span>
+          <span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Seaborn</span>
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Tableau</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="skill-category__title">
+          <span class="skill-category__icon">🗄️</span> Databases
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">SQLite</span>
+          <span class="skill-tag">FAISS IndexFlatIP</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="skill-category__title">
+          <span class="skill-category__icon">🚀</span> Deployment
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Streamlit</span>
+          <span class="skill-tag">HuggingFace Spaces</span>
+          <span class="skill-tag">GitHub Pages</span>
+          <span class="skill-tag">GeoPandas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══ LEADERSHIP ═══ -->
+<section class="section" id="leadership">
+  <div class="container">
+    <div class="section__header fade-in">
+      <span class="section__label">Leadership</span>
+      <h2 class="section__title">Beyond Code</h2>
+    </div>
+    <div class="leadership__grid stagger-children fade-in">
+      <div class="glass-card">
+        <div class="leadership-card__icon">📚</div>
+        <div class="leadership-card__role">Head — Literacy Club</div>
+        <div class="leadership-card__org">Led initiatives promoting technical and general literacy, organized workshops and reading events</div>
+      </div>
+      <div class="glass-card">
+        <div class="leadership-card__icon">✍️</div>
+        <div class="leadership-card__role">Content Head</div>
+        <div class="leadership-card__org"><strong>Association of Computer Science & IT</strong> — Managed content strategy, publications, and technical communications</div>
+      </div>
+      <div class="glass-card">
+        <div class="leadership-card__icon">🎯</div>
+        <div class="leadership-card__role">Advisory Committee Member</div>
+        <div class="leadership-card__org"><strong>Association of Computer Science & IT</strong> — Contributed to strategic planning and event coordination</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══ FEATURED PROJECTS PREVIEW ═══ -->
+<section class="section" id="projects-preview">
+  <div class="container">
+    <div class="section__header fade-in">
+      <span class="section__label">Projects</span>
+      <h2 class="section__title">Featured Work</h2>
+    </div>
+    <div class="projects__grid stagger-children fade-in" id="featuredProjects">
+      <!-- Dynamically loaded from projects.json -->
+    </div>
+    <div style="text-align:center; margin-top:40px;" class="fade-in">
+      <a href="projects.html" class="btn btn--primary" id="btnAllProjects">View All Projects →</a>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section__header fade-in" style="text-align:center;">
+      <span class="section__label">Contact</span>
+      <h2 class="section__title">Let's Connect</h2>
+      <p style="color:var(--text-secondary); margin-top:12px; max-width:500px; margin-left:auto; margin-right:auto;">
+        Open to AI/ML roles, research collaborations, and interesting projects.
+      </p>
+    </div>
+    <div class="contact__grid stagger-children fade-in">
+      <a href="ADD_GITHUB_URL" target="_blank" rel="noopener" class="glass-card contact-card" id="contactGithub">
+        <span class="contact-card__icon">🐙</span>
+        <div class="contact-card__label">GitHub</div>
+        <div class="contact-card__value">GitHub Profile</div>
+      </a>
+      <a href="ADD_LINKEDIN_URL" target="_blank" rel="noopener" class="glass-card contact-card" id="contactLinkedin">
+        <span class="contact-card__icon">💼</span>
+        <div class="contact-card__label">LinkedIn</div>
+        <div class="contact-card__value">LinkedIn Profile</div>
+      </a>
+      <a href="mailto:sundarighanshyampathak@gmail.com" class="glass-card contact-card" id="contactEmail">
+        <span class="contact-card__icon">📧</span>
+        <div class="contact-card__label">Email</div>
+        <div class="contact-card__value">sundarighanshyampathak@gmail.com</div>
+      </a>
+      <a href="tel:+919726719978" class="glass-card contact-card" id="contactPhone">
+        <span class="contact-card__icon">📱</span>
+        <div class="contact-card__label">Phone</div>
+        <div class="contact-card__value">+91 9726719978</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__links">
+      <a href="ADD_GITHUB_URL" class="footer__link" target="_blank" rel="noopener">GitHub</a>
+      <a href="ADD_LINKEDIN_URL" class="footer__link" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:sundarighanshyampathak@gmail.com" class="footer__link">Email</a>
+    </div>
+    <p class="footer__text">© 2026 Sundari Pathak. Built with passion.</p>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════
+// PARTICLE SYSTEM
+// ═══════════════════════════════════════════
+(function() {
+  const canvas = document.getElementById('particleCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let animFrame;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function createParticles() {
+    particles = [];
+    const count = Math.min(60, Math.floor(window.innerWidth / 25));
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.5 + 0.5,
+        alpha: Math.random() * 0.3 + 0.1
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(168, 85, 247, ${p.alpha})`;
+      ctx.fill();
+
+      // Connect nearby particles
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dx = p.x - p2.x;
+        const dy = p.y - p2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(108, 92, 231, ${0.06 * (1 - dist / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    animFrame = requestAnimationFrame(draw);
+  }
+
+  resize();
+  createParticles();
+  draw();
+
+  window.addEventListener('resize', () => {
+    resize();
+    createParticles();
+  });
+})();
+
+// ═══════════════════════════════════════════
+// TYPING ANIMATION
+// ═══════════════════════════════════════════
+(function() {
+  const el = document.getElementById('heroSubtitle');
+  const text = "AI Engineer — Retrieval-Augmented Generation, semantic search, geospatial AI systems, and production ML pipelines.";
+  let i = 0;
+
+  function type() {
+    if (i <= text.length) {
+      el.innerHTML = text.slice(0, i) + '<span class="typing-cursor"></span>';
+      i++;
+      setTimeout(type, 18);
+    } else {
+      // Remove cursor after a delay
+      setTimeout(() => {
+        el.innerHTML = text;
+      }, 2500);
+    }
+  }
+
+  // Start after page loads
+  setTimeout(type, 600);
+})();
+
+// ═══════════════════════════════════════════
+// SCROLL-TRIGGERED ANIMATIONS
+// ═══════════════════════════════════════════
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale, .stagger-children').forEach(el => {
+    observer.observe(el);
+  });
+})();
+
+// ═══════════════════════════════════════════
+// ANIMATED COUNTERS
+// ═══════════════════════════════════════════
+(function() {
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = 'true';
+        const target = parseInt(entry.target.dataset.count);
+        const suffix = entry.target.parentElement.querySelector('.stat-card__label')?.textContent.includes('%') ? '%' : '+';
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 40));
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          entry.target.textContent = current + (current === target ? (suffix === '%' ? '%' : '+') : '');
+        }, 30);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => counterObserver.observe(c));
+})();
+
+// ═══════════════════════════════════════════
+// SCROLL PROGRESS BAR
+// ═══════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById('scrollProgress').style.width = progress + '%';
+});
+
+// ═══════════════════════════════════════════
+// MOBILE NAV & NAVBAR SCROLL
+// ═══════════════════════════════════════════
+document.getElementById('mobileToggle').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('navbar__links--open');
+});
+
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').style.background =
+    window.scrollY > 50 ? 'rgba(10,10,15,0.95)' : 'rgba(10,10,15,0.8)';
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.navbar__link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('navbar__links--open');
+  });
+});
+
+// ═══════════════════════════════════════════
+// LOAD FEATURED PROJECTS (max 3)
+// ═══════════════════════════════════════════
+fetch('projects.json')
+  .then(r => r.json())
+  .then(projects => {
+    const grid = document.getElementById('featuredProjects');
+    projects.slice(0, 3).forEach((p, i) => {
+      grid.innerHTML += `
+        <a href="project-template.html?id=${p.id}" class="glass-card project-card" style="text-decoration:none;">
+          <div class="project-card__preview" style="background:linear-gradient(135deg, ${['#6c5ce7','#a855f7','#06b6d4'][i%3]}22, ${['#a855f7','#06b6d4','#6c5ce7'][i%3]}44); display:flex; align-items:center; justify-content:center; font-size:3.5rem;">${p.emoji || '🤖'}</div>
+          <div class="project-card__body">
+            <div class="project-card__title">${p.title}</div>
+            <div class="project-card__desc">${p.description}</div>
+            <div class="project-card__tech">
+              ${p.tech_stack.slice(0,4).map(t => `<span class="tech-tag">${t}</span>`).join('')}
+            </div>
+          </div>
+        </a>
+      `;
+    });
+  })
+  .catch(() => {
+    document.getElementById('featuredProjects').innerHTML = '<p style="color:var(--text-muted);">Projects loading…</p>';
+  });
+</script>
+
+</body>
+</html>

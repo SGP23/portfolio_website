@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details — Sundari Pathak</title>
+    <meta name="description" content="Detailed project page — Sundari Pathak AI/ML Portfolio">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="bg-orbs">
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-orb bg-orb--3"></div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="index.html" class="navbar__brand">SP.</a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html#about" class="navbar__link">About</a></li>
+                <li><a href="index.html#experience" class="navbar__link">Experience</a></li>
+                <li><a href="index.html#skills" class="navbar__link">Skills</a></li>
+                <li><a href="index.html#leadership" class="navbar__link">Leadership</a></li>
+                <li><a href="projects.html" class="navbar__link navbar__link--active">Projects</a></li>
+                <li><a href="index.html#contact" class="navbar__link">Contact</a></li>
+            </ul>
+            <button class="navbar__mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Project Detail -->
+    <section class="project-detail" id="projectDetail">
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="project-detail__hero fade-in" id="detailHero">
+                <!-- Dynamically populated -->
+            </div>
+
+            <div class="project-detail__content" id="detailContent">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top:60px;">
+        <div class="container">
+            <div class="footer__links">
+                <a href="ADD_GITHUB_URL" class="footer__link" target="_blank"
+                    rel="noopener">GitHub</a>
+                <a href="ADD_LINKEDIN_URL" class="footer__link" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <a href="mailto:sundarighanshyampathak@gmail.com" class="footer__link">Email</a>
+            </div>
+            <p class="footer__text">© 2026 Sundari Pathak</p>
+        </div>
+    </footer>
+
+    <script>
+        const ACCENT_COLORS = ['#6c5ce7', '#a855f7', '#06b6d4'];
+
+        function getProjectId() {
+            const params = new URLSearchParams(window.location.search);
+            return parseInt(params.get('id'), 10);
+        }
+
+        function animateValue(element, target, suffix) {
+            const isNumber = !isNaN(parseFloat(target));
+            if (!isNumber) {
+                element.textContent = target;
+                return;
+            }
+            const num = parseFloat(target);
+            const isFloat = target.includes('.');
+            let current = 0;
+            const duration = 1500;
+            const start = performance.now();
+
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                current = num * eased;
+
+                if (isFloat) {
+                    element.textContent = current.toFixed(target.split('.')[1]?.length || 2) + (suffix || '');
+                } else {
+                    element.textContent = Math.round(current) + (suffix || '');
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = target + (suffix || '');
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
+        function renderDetail(project, idx) {
+            document.title = `${project.title} — Sundari Pathak`;
+            const meta = document.querySelector('meta[name="description"]');
+            if (meta) meta.content = project.description;
+
+            const color = ACCENT_COLORS[idx % ACCENT_COLORS.length];
+
+            // Hero
+            document.getElementById('detailHero').innerHTML = `
+    <div class="project-detail__emoji">${project.emoji || '🤖'}</div>
+    <h1 class="project-detail__title">${project.title}</h1>
+    <p style="color:var(--text-secondary); max-width:600px; margin:0 auto 24px; font-size:1.05rem;">${project.description}</p>
+    <div class="project-detail__tech-stack">
+      ${project.tech_stack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+    </div>
+    <div class="project-detail__actions">
+      ${project.demo_link ? `<a href="${project.demo_link}" target="_blank" rel="noopener" class="btn btn--primary"><span>🚀</span> Live Demo</a>` : ''}
+      ${project.github_link ? `<a href="${project.github_link}" target="_blank" rel="noopener" class="btn btn--outline"><span>📂</span> GitHub</a>` : ''}
+    </div>
+  `;
+
+            // Metrics
+            const metrics = project.evaluation_metrics || {};
+            const metricCards = Object.entries(metrics).map(([k, v], i) => `
+    <div class="glass-card metric-card fade-in-scale" style="transition-delay:${i * 0.1}s;">
+      <div class="metric-card__value" data-metric-value="${v}">${v}</div>
+      <div class="metric-card__label">${k}</div>
+    </div>
+  `).join('');
+
+            // Content
+            document.getElementById('detailContent').innerHTML = `
+    <div class="fade-in-left">
+      <div class="detail-section">
+        <h2 class="detail-section__title">Problem Statement</h2>
+        <p class="detail-section__text">${project.problem_statement || 'N/A'}</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="detail-section__title">Dataset Summary</h2>
+        <p class="detail-section__text">${project.dataset_summary || 'N/A'}</p>
+      </div>
+      <div class="detail-section">
+        <h2 class="detail-section__title">Model Approach</h2>
+        <p class="detail-section__text">${project.model_approach || 'N/A'}</p>
+      </div>
+    </div>
+    <div class="fade-in-right">
+      <div class="detail-section">
+        <h2 class="detail-section__title">Evaluation Metrics</h2>
+        <div class="metric-grid">
+          ${metricCards}
+        </div>
+      </div>
+    </div>
+  `;
+
+            // Trigger animations
+            requestAnimationFrame(() => {
+                document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+                    const obs = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    }, { threshold: 0.05 });
+                    obs.observe(el);
+                });
+
+                // Animate metric values
+                setTimeout(() => {
+                    document.querySelectorAll('[data-metric-value]').forEach(el => {
+                        const val = el.dataset.metricValue;
+                        if (/^\d/.test(val)) {
+                            animateValue(el, val, '');
+                        }
+                    });
+                }, 500);
+            });
+        }
+
+        function renderError() {
+            document.getElementById('detailHero').innerHTML = `
+    <h1 class="project-detail__title">Project Not Found</h1>
+    <p style="color:var(--text-secondary);">The project you're looking for doesn't exist.</p>
+    <a href="projects.html" class="btn btn--primary" style="margin-top:24px;">← Back to Projects</a>
+  `;
+            document.getElementById('detailContent').innerHTML = '';
+        }
+
+        // Load
+        const projectId = getProjectId();
+
+        fetch('projects.json')
+            .then(r => r.json())
+            .then(projects => {
+                const project = projects.find(p => p.id === projectId);
+                if (project) {
+                    renderDetail(project, projectId);
+                } else {
+                    renderError();
+                }
+            })
+            .catch(() => renderError());
+
+        // Mobile Nav
+        document.getElementById('mobileToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('navbar__links--open');
+        });
+
+        // Navbar scroll + progress
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').style.background =
+                window.scrollY > 50 ? 'rgba(10,10,15,0.95)' : 'rgba(10,10,15,0.8)';
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            document.getElementById('scrollProgress').style.width = progress + '%';
+        });
+
+        // Particle canvas (lightweight)
+        (function() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            function init() {
+                particles = [];
+                const count = Math.min(35, Math.floor(window.innerWidth / 40));
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.2, vy: (Math.random() - 0.5) * 0.2,
+                        r: Math.random() * 1.2 + 0.3, alpha: Math.random() * 0.2 + 0.05
+                    });
+                }
+            }
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (const p of particles) {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+                    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(168, 85, 247, ${p.alpha})`; ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+            resize(); init(); draw();
+            window.addEventListener('resize', () => { resize(); init(); });
+        })();
+    </script>
+
+</body>
+
+</html>

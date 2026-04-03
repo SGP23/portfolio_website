@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Sundari Pathak</title>
+    <meta name="description"
+        content="AI/ML projects by Sundari Pathak including ASL Translator, Diamond Price Prediction, and RAG Document Chatbot.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="bg-orbs">
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-orb bg-orb--3"></div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__inner">
+            <a href="index.html" class="navbar__brand">SP.</a>
+            <ul class="navbar__links" id="navLinks">
+                <li><a href="index.html#about" class="navbar__link">About</a></li>
+                <li><a href="index.html#experience" class="navbar__link">Experience</a></li>
+                <li><a href="index.html#skills" class="navbar__link">Skills</a></li>
+                <li><a href="index.html#leadership" class="navbar__link">Leadership</a></li>
+                <li><a href="projects.html" class="navbar__link navbar__link--active">Projects</a></li>
+                <li><a href="index.html#contact" class="navbar__link">Contact</a></li>
+            </ul>
+            <button class="navbar__mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="section" style="padding-top:120px;">
+        <div class="container">
+            <div class="section__header fade-in">
+                <span class="section__label">Portfolio</span>
+                <h1 class="section__title">All Projects</h1>
+            </div>
+
+            <!-- Category Filter Chips -->
+            <div class="filter-chips fade-in" id="filterChips">
+                <button class="filter-chip filter-chip--active" data-category="all">All</button>
+                <button class="filter-chip" data-category="computer-vision">🔍 Computer Vision</button>
+                <button class="filter-chip" data-category="nlp">💬 NLP / RAG</button>
+                <button class="filter-chip" data-category="analytics">📊 Analytics</button>
+            </div>
+
+            <!-- Filter / Search Bar -->
+            <div class="filter-bar fade-in">
+                <input type="text" class="filter-bar__search" id="searchInput"
+                    placeholder="Search projects by name, tech, or description…" aria-label="Search projects">
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="projects__grid" id="projectsGrid">
+                <!-- Dynamically loaded -->
+            </div>
+
+            <p id="noResults" style="display:none; text-align:center; color:var(--text-muted); padding:60px 0;">No
+                projects match your search.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__links">
+                <a href="ADD_GITHUB_URL" class="footer__link" target="_blank"
+                    rel="noopener">GitHub</a>
+                <a href="ADD_LINKEDIN_URL" class="footer__link" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <a href="mailto:sundarighanshyampathak@gmail.com" class="footer__link">Email</a>
+            </div>
+            <p class="footer__text">© 2026 Sundari Pathak</p>
+        </div>
+    </footer>
+
+    <script>
+        const ACCENT_COLORS = ['#6c5ce7', '#a855f7', '#06b6d4', '#22c55e', '#f59e0b'];
+        let allProjects = [];
+        let activeCategory = 'all';
+
+        fetch('projects.json')
+            .then(r => r.json())
+            .then(projects => {
+                allProjects = projects;
+                renderProjects(projects);
+            })
+            .catch(() => {
+                document.getElementById('projectsGrid').innerHTML =
+                    '<p style="color:var(--text-muted);">Failed to load projects.</p>';
+            });
+
+        function renderProjects(projects) {
+            const grid = document.getElementById('projectsGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (projects.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            grid.innerHTML = projects.map((p, idx) => {
+                const color = ACCENT_COLORS[idx % ACCENT_COLORS.length];
+                return `
+      <a href="project-template.html?id=${p.id}" class="glass-card project-card fade-in-scale" style="text-decoration:none; transition-delay:${idx * 0.08}s;">
+        <div class="project-card__preview" style="background:linear-gradient(135deg, ${color}22, ${color}44); display:flex; align-items:center; justify-content:center; font-size:3.5rem;">
+          ${p.emoji || '🤖'}
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__title">${p.title}</div>
+          <div class="project-card__desc">${p.description}</div>
+          <div class="project-card__tech">
+            ${p.tech_stack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+          </div>
+          <div class="project-card__actions">
+            ${p.demo_link ? `<span class="btn btn--primary btn--sm">Live Demo</span>` : ''}
+            ${p.github_link ? `<span class="btn btn--outline btn--sm">GitHub</span>` : ''}
+          </div>
+        </div>
+      </a>
+    `;
+            }).join('');
+
+            // Re-trigger animations
+            requestAnimationFrame(() => {
+                document.querySelectorAll('.fade-in-scale').forEach(el => {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) entry.target.classList.add('visible');
+                        });
+                    }, { threshold: 0.05 });
+                    observer.observe(el);
+                });
+            });
+        }
+
+        function filterProjects() {
+            const q = document.getElementById('searchInput').value.toLowerCase().trim();
+            let filtered = allProjects;
+
+            // Category filter
+            if (activeCategory !== 'all') {
+                filtered = filtered.filter(p => p.category === activeCategory);
+            }
+
+            // Search filter
+            if (q) {
+                filtered = filtered.filter(p =>
+                    p.title.toLowerCase().includes(q) ||
+                    p.description.toLowerCase().includes(q) ||
+                    p.tech_stack.some(t => t.toLowerCase().includes(q))
+                );
+            }
+
+            renderProjects(filtered);
+        }
+
+        // Search
+        document.getElementById('searchInput').addEventListener('input', filterProjects);
+
+        // Category chips
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.addEventListener('click', function () {
+                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('filter-chip--active'));
+                this.classList.add('filter-chip--active');
+                activeCategory = this.dataset.category;
+                filterProjects();
+            });
+        });
+
+        // Mobile Nav
+        document.getElementById('mobileToggle').addEventListener('click', function () {
+            document.getElementById('navLinks').classList.toggle('navbar__links--open');
+        });
+
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').style.background =
+                window.scrollY > 50 ? 'rgba(10,10,15,0.95)' : 'rgba(10,10,15,0.8)';
+            // Scroll progress
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            document.getElementById('scrollProgress').style.width = progress + '%';
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in, .fade-in-scale').forEach(el => observer.observe(el));
+
+        // Particle canvas (lightweight version)
+        (function() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            function init() {
+                particles = [];
+                const count = Math.min(40, Math.floor(window.innerWidth / 35));
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.2, vy: (Math.random() - 0.5) * 0.2,
+                        r: Math.random() * 1.2 + 0.3, alpha: Math.random() * 0.2 + 0.05
+                    });
+                }
+            }
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (const p of particles) {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+                    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(168, 85, 247, ${p.alpha})`; ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+            resize(); init(); draw();
+            window.addEventListener('resize', () => { resize(); init(); });
+        })();
+    </script>
+
+</body>
+
+</html>
