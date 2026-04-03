@@ -1,0 +1,90 @@
+[
+  {
+    "id": 0,
+    "title": "Enhanced GIS Data Assistant",
+    "emoji": "🌍",
+    "category": "nlp",
+    "description": "Hybrid semantic search assistant for geospatial intelligence. Combines LangChain RAG pipelines with FAISS vector retrieval over GIS datasets, delivering spatial-aware conversational Q&A through an interactive Streamlit dashboard with Folium and Plotly visualizations.",
+    "github_link": "https://github.com/SGP23",
+    "demo_link": "https://huggingface.co/spaces/SGP23/gis-data-assistant",
+    "tech_stack": ["LangChain", "FAISS", "Streamlit", "GeoPandas", "Folium", "Plotly", "Python"],
+    "preview_image": "",
+    "problem_statement": "Geospatial datasets are large, heterogeneous, and difficult to query using traditional tools. Analysts need an intelligent assistant that can understand natural language questions about geographic data, retrieve relevant spatial records via semantic search, and render results as interactive maps and charts.",
+    "dataset_summary": "GIS shapefiles and tabular geospatial records ingested via GeoPandas. Documents are chunked, embedded with FAISS, and indexed for hybrid retrieval combining vector similarity with spatial coordinate filtering.",
+    "model_approach": "RAG pipeline: (1) Document and geospatial data ingestion via LangChain loaders, (2) Recursive text chunking with metadata tagging, (3) FAISS vector indexing for semantic retrieval, (4) LLM-powered answer synthesis grounded in retrieved spatial context, (5) Interactive Streamlit dashboard with Folium map overlays and Plotly analytics charts.",
+    "evaluation_metrics": {
+      "Pipeline": "RAG + GIS Hybrid",
+      "Vector Store": "FAISS",
+      "Spatial Engine": "GeoPandas",
+      "Map Renderer": "Folium",
+      "Charts": "Plotly",
+      "Interface": "Streamlit"
+    }
+  },
+  {
+    "id": 1,
+    "title": "ASL Real-Time Translator",
+    "emoji": "👋",
+    "category": "computer-vision",
+    "description": "Real-time American Sign Language recognition system using MediaPipe hand landmark extraction and CNN/LSTM classification. Processes uploaded images through a 21-point hand skeleton detector, performs finger extension analysis, and maps hand poses to ASL alphabet letters (A-Z).",
+    "github_link": "https://github.com/SGP23/asl-translator",
+    "demo_link": "https://huggingface.co/spaces/SGP23/asl-translator",
+    "tech_stack": ["MediaPipe", "TensorFlow", "OpenCV", "Streamlit", "NumPy", "Python"],
+    "preview_image": "",
+    "problem_statement": "Communication barriers exist between deaf/hard-of-hearing communities and those unfamiliar with sign language. Existing translation solutions rely on expensive cloud APIs or specialized hardware. A lightweight, edge-deployable system using commodity webcams can democratize access to real-time ASL translation.",
+    "dataset_summary": "ASL Alphabet Dataset (Kaggle): 87,000+ images across 26 letter classes. Hand landmarks extracted via MediaPipe (21 keypoints × 3 coordinates) serve as input features, replacing raw pixel processing with structured skeletal representations.",
+    "model_approach": "Two-stage architecture: (1) MediaPipe Hands extracts 21 3D hand landmarks per frame, (2) Finger extension analysis classifies hand pose by comparing landmark distances against ASL reference templates. The pipeline supports real image upload with live landmark visualization and confidence scoring. For local deployment, a CNN classifier operates on the landmark feature vector with 85% confidence thresholding.",
+    "evaluation_metrics": {
+      "Detection": "MediaPipe Hands",
+      "Features": "21 × 3 landmarks",
+      "Classes": "26 (A-Z)",
+      "Classification": "Template matching + CNN",
+      "Inference": "Image upload → instant",
+      "Edge Ready": "TFLite compatible"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Diamond Price Prediction",
+    "emoji": "💎",
+    "category": "analytics",
+    "description": "Production-grade regression pipeline predicting diamond prices from 9 physical and quality features. Trained on 193,573 samples with automated feature engineering (OrdinalEncoder + StandardScaler), model comparison across 7 regressors, and deployed as a compact 1.6MB GradientBoosting pipeline with R² = 0.979.",
+    "github_link": "https://github.com/SGP23/Diamond-Price-Prediction",
+    "demo_link": "https://huggingface.co/spaces/SGP23/diamond-price-prediction",
+    "tech_stack": ["Scikit-learn", "Pandas", "Streamlit", "NumPy", "Python"],
+    "preview_image": "",
+    "problem_statement": "Diamond pricing depends on complex interactions between physical properties (carat, dimensions) and quality grades (cut, color, clarity). Manual appraisal is subjective and inconsistent. A data-driven ML pipeline can provide instant, reproducible price estimates for consumers and jewelers.",
+    "dataset_summary": "193,573 diamonds with 9 features: carat (weight), cut (Fair→Ideal), color (D→J), clarity (I1→IF), depth %, table %, and 3D dimensions (x, y, z mm). Target: price in USD. Train/test split: 80/20.",
+    "model_approach": "End-to-end sklearn Pipeline: (1) ColumnTransformer with OrdinalEncoder (categorical) + StandardScaler (numerical), (2) Model comparison: 7 regressors (Linear, Lasso, Ridge, ElasticNet, DecisionTree, RandomForest, GradientBoosting), (3) Best deployment model: GradientBoosting (200 estimators, max_depth=6) — R²=0.979, MAE=$295. Model compressed from 1.3GB RandomForest to 1.6MB GradientBoosting for cloud deployment.",
+    "evaluation_metrics": {
+      "Model": "GradientBoosting",
+      "Train R²": "0.9839",
+      "Test R²": "0.9791",
+      "MAE": "$294.87",
+      "RMSE": "$581.12",
+      "Model Size": "1.6 MB"
+    }
+  },
+  {
+    "id": 3,
+    "title": "RAG Document Chatbot",
+    "emoji": "📚",
+    "category": "nlp",
+    "description": "Cloud-native Retrieval-Augmented Generation chatbot. Users upload PDF/TXT documents which are chunked, embedded via sentence-transformers (MiniLM-L6-v2), and indexed in a FAISS vector store. Queries trigger cosine similarity search over 384-dimensional embeddings, retrieving top-4 relevant passages for extractive answer synthesis.",
+    "github_link": "https://github.com/SGP23/rag-with-ollama",
+    "demo_link": "https://huggingface.co/spaces/SGP23/rag-chatbot",
+    "tech_stack": ["sentence-transformers", "FAISS", "Streamlit", "PyPDF2", "NumPy", "Python"],
+    "preview_image": "",
+    "problem_statement": "Large documents are difficult to search linearly. Traditional keyword search misses semantic relationships. Users need a system that understands natural language queries, retrieves contextually relevant passages via vector similarity, and synthesizes grounded answers — all without sending data to external APIs.",
+    "dataset_summary": "User-uploaded PDF and TXT files processed dynamically. Documents split into 300-character chunks with 50-character overlap via recursive character splitting. Each chunk embedded as a 384-dimensional vector using all-MiniLM-L6-v2.",
+    "model_approach": "RAG pipeline: (1) Document ingestion — PyPDF2/TXT loaders extract text, (2) Chunking — RecursiveCharacterSplit (300 chars, 50 overlap), (3) Embedding — sentence-transformers all-MiniLM-L6-v2 (384-dim), (4) Indexing — FAISS IndexFlatIP for cosine similarity, (5) Retrieval — Top-4 chunks per query, (6) Synthesis — Extractive answer generation from retrieved context with source attribution.",
+    "evaluation_metrics": {
+      "Pipeline": "RAG",
+      "Embedding": "MiniLM-L6-v2",
+      "Dimensions": "384",
+      "Vector Store": "FAISS",
+      "Top-K": "4 chunks",
+      "Formats": "PDF, TXT"
+    }
+  }
+]

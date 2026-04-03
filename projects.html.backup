@@ -39,7 +39,7 @@
     </nav>
 
     <!-- Projects Section -->
-    <section class="section">
+    <section class="section" style="padding-top:120px;">
         <div class="container">
             <div class="section__header fade-in">
                 <span class="section__label">Portfolio</span>
@@ -65,7 +65,7 @@
                 <!-- Dynamically loaded -->
             </div>
 
-            <p id="noResults" class="no-results" style="display:none;">No
+            <p id="noResults" style="display:none; text-align:center; color:var(--text-muted); padding:60px 0;">No
                 projects match your search.</p>
         </div>
     </section>
@@ -85,7 +85,7 @@
     </footer>
 
     <script>
-        const ACCENT_COLORS = ['#00e5ff', '#ffb020', '#22d3ee', '#00e5ff', '#ffb020'];
+        const ACCENT_COLORS = ['#6c5ce7', '#a855f7', '#06b6d4', '#22c55e', '#f59e0b'];
         let allProjects = [];
         let activeCategory = 'all';
 
@@ -114,23 +114,23 @@
             grid.innerHTML = projects.map((p, idx) => {
                 const color = ACCENT_COLORS[idx % ACCENT_COLORS.length];
                 return `
-      <a href="project-template.html?id=${p.id}" class="glass-card project-card fade-in-scale" style="transition-delay:${idx * 0.08}s;">
-        <div class="project-card__preview" style="background:linear-gradient(135deg, ${color}22, ${color}44);">
+      <a href="project-template.html?id=${p.id}" class="glass-card project-card fade-in-scale" style="text-decoration:none; transition-delay:${idx * 0.08}s;">
+        <div class="project-card__preview" style="background:linear-gradient(135deg, ${color}22, ${color}44); display:flex; align-items:center; justify-content:center; font-size:3.5rem;">
           ${p.emoji || '🤖'}
         </div>
         <div class="project-card__body">
-          <h3 class="project-card__title">${p.title}</h3>
-          <div class="project-card__detail">
-            <div><span class="project-card__label" style="color:var(--accent-3);">Problem:</span>${p.problem_statement.substring(0, 90)}...</div>
-            <div><span class="project-card__label" style="color:var(--accent-2);">Pipeline:</span>${p.model_approach.substring(0, 90)}...</div>
-            <div><span class="project-card__label" style="color:var(--success);">Metric:</span>${Object.keys(p.evaluation_metrics)[1] || 'Status'}: ${Object.values(p.evaluation_metrics)[1] || 'Active'}</div>
+          <div class="project-card__title">${p.title}</div>
+          <div class="project-card__desc" style="font-size:0.85rem; line-height:1.4; display:flex; flex-direction:column; gap:6px; margin-bottom:16px;">
+            <div><strong style="color:var(--accent-3);">Problem:</strong> ${p.problem_statement.substring(0, 90)}...</div>
+            <div><strong style="color:var(--accent-2);">Pipeline:</strong> ${p.model_approach.substring(0, 90)}...</div>
+            <div><strong style="color:var(--success);">Impact Metric:</strong> ${Object.keys(p.evaluation_metrics)[1] || 'Status'}: ${Object.values(p.evaluation_metrics)[1] || 'Active'}</div>
           </div>
           <div class="project-card__tech">
             ${p.tech_stack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
           </div>
-          <div class="project-card__actions">
-            ${p.demo_link ? `<button onclick="window.open('${p.demo_link}', '_blank'); event.preventDefault(); event.stopPropagation();" class="btn btn--primary btn--sm">Live Demo</button>` : ''}
-            ${p.github_link ? `<button onclick="window.open('${p.github_link}', '_blank'); event.preventDefault(); event.stopPropagation();" class="btn btn--outline btn--sm">GitHub ↗</button>` : ''}
+          <div class="project-card__actions" style="display: flex; gap: 10px; margin-top: auto;">
+            ${p.demo_link ? `<button onclick="window.open('${p.demo_link}', '_blank'); event.preventDefault(); event.stopPropagation();" class="btn btn--primary btn--sm" style="border:none; cursor:pointer;">Live Demo</button>` : ''}
+            ${p.github_link ? `<button onclick="window.open('${p.github_link}', '_blank'); event.preventDefault(); event.stopPropagation();" class="btn btn--outline btn--sm" style="border:1px solid currentColor; cursor:pointer;">GitHub</button>` : ''}
           </div>
         </div>
       </a>
