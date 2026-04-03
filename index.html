@@ -170,57 +170,133 @@
       <span class="section__label">Skills</span>
       <h2 class="section__title">Technical Stack</h2>
     </div>
-    <div class="skills__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
+    </div>
+
+    <!-- SKILLS CAPABILITY CLUSTERS -->
+    <div class="skills-clusters fade-in" style="display: flex; flex-direction: column; gap: 40px;">
       
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">LangChain</span>
-        <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+      <!-- Cluster 1: Retrieval Systems -->
+      <div>
+        <h3 style="font-size: 1.1rem; color: var(--accent-3); margin-bottom: 16px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">1. Retrieval Systems</h3>
+        <div class="skills__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">FAISS</span>
+            <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Vector Pipelines</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">FAISS</span>
-        <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+      <!-- Cluster 2: LLM Orchestration -->
+      <div>
+        <h3 style="font-size: 1.1rem; color: var(--accent-3); margin-bottom: 16px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">2. LLM Orchestration</h3>
+        <div class="skills__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">LangChain</span>
+            <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Ollama</span>
+            <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Hugging Face</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">OpenAI API</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Ollama</span>
-        <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+      <!-- Cluster 3: Geospatial AI -->
+      <div>
+        <h3 style="font-size: 1.1rem; color: var(--accent-3); margin-bottom: 16px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">3. Geospatial AI</h3>
+        <div class="skills__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">GeoPandas</span>
+            <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Shapely</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">QGIS</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">CRS Transforms</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Python</span>
-        <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+      <!-- Cluster 4: Machine Learning & Engineering -->
+      <div>
+        <h3 style="font-size: 1.1rem; color: var(--accent-3); margin-bottom: 16px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">4. Machine Learning & Engineering</h3>
+        <div class="skills__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Python</span>
+            <span style="background: rgba(0, 229, 255, 0.15); color: var(--accent-1); font-size: 0.7rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--accent-1);">CORE</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-1); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">PyTorch</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">TensorFlow</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Scikit-learn</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+          <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+            <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">ML Preprocessing</span>
+            <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">GeoPandas + QGIS</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+      <!-- Cluster 5 & 6 Row for Space Optimization -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+        <!-- Cluster 5: Data Infrastructure -->
+        <div>
+          <h3 style="font-size: 1.1rem; color: var(--accent-3); margin-bottom: 16px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">5. Data Infrastructure</h3>
+          <div class="skills__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+              <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">SQL</span>
+              <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cluster 6: Deployment Interfaces -->
+        <div>
+          <h3 style="font-size: 1.1rem; color: var(--accent-3); margin-bottom: 16px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px;">6. Deployment Interfaces</h3>
+          <div class="skills__grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+              <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Streamlit</span>
+              <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+            </div>
+            <div class="glass-card stack-card" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; transition: transform 0.3s ease;">
+              <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">CLI Tooling</span>
+              <div class="card-glow" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Hugging Face</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
-      </div>
-
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">PyTorch + TensorFlow</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
-      </div>
-
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">Streamlit</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
-      </div>
-
-      <div class="glass-card stack-card fade-in" style="padding: 16px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid transparent; transition: all 0.3s ease; cursor: default;">
-        <span style="font-weight: 600; font-family: var(--font-mono); color: var(--text-primary);">OpenAI API</span>
-        <div class="card-glow" style="position: absolute; bottom: -2px; left: 0; width: 100%; height: 2px; background: var(--accent-2); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left;"></div>
-      </div>
-
+      
     </div>
 
     <style>
